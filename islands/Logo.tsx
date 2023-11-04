@@ -3,11 +3,6 @@ import { IS_BROWSER } from "$fresh/runtime.ts";
 import { useState, useEffect } from "https://esm.sh/preact@10.18.1/hooks";
 
 const arr: string[] = [
-  `mystère`,
-  `.ystère`,
-  `m.stère`,
-  `my.tère`,
-  `mys.ère`,
   `myst.re`,
   `myst.re`,
   `myst.re`,
@@ -15,12 +10,32 @@ const arr: string[] = [
   `myst.re`,
   `myst.re`,
   `myst.re`,
-  `mystè.e`,
-  `mystèr.`,
+  `myst.re`,
+  `myst.re`,
+  `myst.re`,
+  `myst.re`,
+  `yst.re.`,
+  `st.re..`,
+  `t.re...`,
+  `.re....`,
+  `re.....`,
+  `e......`,
+  `.......`,
+  `......m`,
+  `.....my`,
+  `....mys`,
+  `...myst`,
+  `..myst.`,
+  `.myst.r`,
 ];
 
+// const arr: string[] = [
+//   `mystère`,
+//   `myst.re`,
+// ];
+
 export function Logo() {
-  const [text, setText] = useState("mystère");
+  const [text, setText] = useState("loading");
   let i = 0;
 
   function rotateText() {
@@ -34,7 +49,7 @@ export function Logo() {
   useEffect(() => {
     setInterval(() => {
       rotateText();
-    }, 200);
+    }, 500);
   }, [])
 
   return (
