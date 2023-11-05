@@ -9,7 +9,6 @@ export default function Home() {
     <div class="mx-auto">
       <Header />
       <div class="max-w-screen-md mx-auto flex flex-col items-center justify-center gap-3">
-      <hr className={"w-full"}/>
         <div>
           hi, my nickname is mystère, i am a 23 years old french guy. interested
           in low-level programming, hacking, retro-engineering and computer
