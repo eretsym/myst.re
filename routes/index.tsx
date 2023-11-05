@@ -28,6 +28,9 @@ export default function Home() {
         </div>
         <div className={"overflow-hidden h-96 w-full relative"}>
           <img className={"object-cover absolute -top-80"} src={"/guy.jpg"} alt="me" />
+          <div class="absolute whitespace-pre bottom-3 left-3">
+            Paris, 2023
+          </div>
         </div>
       </div>
     </div>
