@@ -106,7 +106,7 @@ export default function Music() {
         <div className={"flex flex-col gap-3"}>
           <div>
           <h1 className={"font-bold"}>cn96</h1>
-          <h2>dreamy underground electronic lo-fi sounds inspired by night life. project started in october 2023.</h2>
+          <h2>dreamy underground electronic lo-fi sounds inspired by night life and aesthetics. project started in october 2023.</h2>
           </div>
           <div className={"flex flex-col"}>
             <h2 className={"font-bold"}>links</h2>
