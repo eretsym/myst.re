@@ -8,7 +8,8 @@ export default function Error404() {
         <title>404</title>
       </Head>
       <Header />
-      <div className={"grid place-content-center justify-items-center text-white"}>
+      <div className={"max-w-screen-md mx-auto flex flex-col gap-3"}>
+        <div>
         <h1 className={"font-bold"}>404</h1>
         <a
           className={"text-white hover:bg-white hover:text-black"}
@@ -16,6 +17,8 @@ export default function Error404() {
         >
           better go home
         </a>
+        </div>
+        <img className={"h-40 object-cover"} src={"/404.jpg"} />
       </div>
     </>
   );

@@ -9,11 +9,13 @@ export default function Music() {
       <Header />
       <div class="max-w-screen-md mx-auto grid grid-cols-2 gap-3">
         <div className={"flex flex-col gap-3"}>
+          <div>
           <h1 className={"font-bold"}>Hyperwav</h1>
           <h2>dreamy electronic lo-fi sounds inspired by retro-futuristic and sci-fi aesthetics. hywerwav was created in 2019</h2>
+          </div>
           <div className={"flex flex-col"}>
             <h2 className={"font-bold"}>links</h2>
-            <hr className={"my-3 w-3"} />
+            
             <div className={"grid grid-cols-3 "}>
             <a
               href={"https://soundcloud.com/hyperwavmusic"}
@@ -55,7 +57,7 @@ export default function Music() {
           </div>
           <div className={"flex flex-col"}>
           <h2 className={"font-bold"}>tracklist</h2>
-          <hr className={"my-3 w-3"} />
+          
           <a
             href={"https://soundcloud.com/hyperwavmusic/kilimanjaro"}
             className={"hover:bg-white hover:text-black"}
@@ -102,11 +104,13 @@ export default function Music() {
           <img className={"h-40 object-cover"} src={"/hyperwav.jpg"} />
         </div>
         <div className={"flex flex-col gap-3"}>
-        <h1 className={"font-bold"}>cn96</h1>
+          <div>
+          <h1 className={"font-bold"}>cn96</h1>
           <h2>dreamy underground electronic lo-fi sounds inspired by night life. project started in october 2023.</h2>
+          </div>
           <div className={"flex flex-col"}>
             <h2 className={"font-bold"}>links</h2>
-            <hr className={"my-3 w-3"} />
+            
             <div className={"grid grid-cols-3 "}>
             <a
               href={"https://soundcloud.com/cn96"}
@@ -118,7 +122,7 @@ export default function Music() {
           </div>
           <div className={"flex flex-col"}>
           <h2 className={"font-bold"}>tracklist</h2>
-          <hr className={"my-3 w-3"} />
+          
           <a
             href={"https://soundcloud.com/cn96/1146pm"}
             className={"hover:bg-white hover:text-black"}
