@@ -101,7 +101,7 @@ export default function Music() {
             quantum-drive
           </a>
           </div>
-          <img className={"h-40 object-cover"} src={"/hyperwav.jpg"} />
+          <hr/>
         </div>
         <div className={"flex flex-col gap-3"}>
           <div>
@@ -130,7 +130,7 @@ export default function Music() {
             1146pm
           </a>
           </div>
-          <img className={"h-40 object-cover"} src={"/cn96.jpg"} />
+          <hr/>
         </div>
       </div>
     </div>

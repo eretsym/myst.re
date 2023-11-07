@@ -13,6 +13,7 @@ function Entry(props: EntryProps) {
     <div>
       <h1 className={"font-bold"}>{props.title}</h1>
       <h2 className={""}>{props.object}</h2>
+      <hr className={"mt-3"}/>
     </div>
   );
 }
@@ -22,10 +23,13 @@ export default function Home() {
   return (
     <div class="mx-auto">
       <Header />
-      <div class="max-w-screen-md mx-auto flex flex-col gap-3">
+      <div class="max-w-screen-md mx-auto grid grid-cols-2 gap-3">
+        <div className={"flex flex-col gap-3"}>
         <Entry title="email" object="contact@myst.re"/>
+        </div>
+        <div className={"flex flex-col gap-3"}>
         <Entry title="discord" object="eretsym"/>
-        <img className={"h-40 object-cover"} src={"/contact.jpg"} />
+        </div>
       </div>
     </div>
   );

@@ -18,7 +18,6 @@ export default function Error404() {
           better come back later
         </a>
         </div>
-        <img className={"h-40 object-cover"} src={"/404.jpg"} />
       </div>
     </>
   );
