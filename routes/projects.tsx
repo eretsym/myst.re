@@ -5,8 +5,8 @@ import { Header } from "../components/Header.tsx";
 import { Handlers, PageProps } from "$fresh/server.ts";
 
 interface ProjectsPageData {
-  userProjects: object[];
-  n1Projects: object[];
+  leftCol: object[];
+  rightCol: object[];
 }
 
 interface EntryProps {
@@ -22,7 +22,19 @@ function Entry(props: EntryProps) {
   return (
     <div className={"flex flex-col gap-3"}>
       <div>
-        <h1 className={"font-bold"}>{props.title} <span className={"font-normal"}>{props.private ? "(private)" : <a href={props.url} className={"hover:bg-white hover:text-black"}>browse repository</a>}</span></h1>
+        <h1 className={"font-bold"}>
+          {props.title}{" "}
+          <span className={"font-normal"}>
+            {props.private ? "(private)" : (
+              <a
+                href={props.url}
+                className={"hover:bg-white hover:text-black"}
+              >
+                browse repository
+              </a>
+            )}
+          </span>
+        </h1>
         <h2>{props.object ?? "none"}</h2>
       </div>
       <div>
@@ -32,12 +44,19 @@ function Entry(props: EntryProps) {
       <div>
         <h1 className={"font-bold"}>topics</h1>
         <div className={"grid grid-cols-3"}>
-          {props.topics.length > 0 ? props.topics.map((elem) => (
-            <a href={`https://github.com/topics/${elem}`} className={"hover:bg-white hover:text-black"}>{elem}</a>
-          )) : "none"}
+          {props.topics.length > 0
+            ? props.topics.map((elem) => (
+              <a
+                href={`https://github.com/topics/${elem}`}
+                className={"hover:bg-white hover:text-black"}
+              >
+                {elem}
+              </a>
+            ))
+            : "none"}
         </div>
       </div>
-      <hr/>
+      <hr />
     </div>
   );
 }
@@ -52,17 +71,15 @@ export const handler: Handlers<ProjectsPageData, ProjectsPageData> = {
       },
     });
 
-    const userProjects = await res.json();
+    const projects = await res.json();
+    const leftCol: object[] = [];
+    const rightCol: object[] = [];
 
-    res = await fetch("https://api.github.com/orgs/n1rip/repos", {
-      headers: {
-        "Authorization": `Bearer ${GITHUB_TOKEN}`,
-        "X-GitHub-Api-Version": "2022-11-28",
-      },
+    projects.forEach((elem: object, i: number) => {
+      i % 2 == 0 ? leftCol.push(elem) : rightCol.push(elem);
     });
-    const n1Projects = await res.json();
 
-    return ctx.render({ userProjects, n1Projects });
+    return ctx.render({ leftCol, rightCol });
   },
 };
 
@@ -73,64 +90,64 @@ export default function projects(props: PageProps<ProjectsPageData>) {
       <Header />
       <div class="max-w-screen-md mx-auto grid grid-cols-2 gap-3">
         <div className={"flex flex-col gap-3"}>
-        {props.data.userProjects.map((elem) => (
-          <Entry
-            title={
-              // @ts-ignore: large response
-              elem.full_name
-            }
-            object={
-              // @ts-ignore: large response
-              elem.description
-            }
-            language={
-              // @ts-ignore: large response
-              elem.language
-            }
-            topics={
-              // @ts-ignore: large response
-              elem.topics
-            }
-            private={
+          {props.data.leftCol.map((elem) => (
+            <Entry
+              title={
+                // @ts-ignore: large response
+                elem.full_name
+              }
+              object={
+                // @ts-ignore: large response
+                elem.description
+              }
+              language={
+                // @ts-ignore: large response
+                elem.language
+              }
+              topics={
+                // @ts-ignore: large response
+                elem.topics
+              }
+              private={
                 // @ts-ignore: large response
                 elem.private
-            }
-            url={
+              }
+              url={
                 // @ts-ignore: large response
                 elem.html_url
-            }
-          />
-        ))}
+              }
+            />
+          ))}
         </div>
         <div className={"flex flex-col gap-3"}>
-        {props.data.n1Projects.map((elem) => (
-          <Entry
-            title={
-              // @ts-ignore: large response
-              elem.full_name
-            }
-            object={
-              // @ts-ignore: large response
-              elem.description
-            }
-            language={
-              // @ts-ignore: large response
-              elem.language
-            }
-            topics={
-              // @ts-ignore: large response
-              elem.topics
-            }
-            private={
+          {props.data.rightCol.map((elem) => (
+            <Entry
+              title={
+                // @ts-ignore: large response
+                elem.full_name
+              }
+              object={
+                // @ts-ignore: large response
+                elem.description
+              }
+              language={
+                // @ts-ignore: large response
+                elem.language
+              }
+              topics={
+                // @ts-ignore: large response
+                elem.topics
+              }
+              private={
                 // @ts-ignore: large response
                 elem.private
-            }
-            url={
+              }
+              url={
                 // @ts-ignore: large response
                 elem.html_url
-            }
-          />
-        ))}
+              }
+            />
+          ))}
         </div>
       </div>
     </div>
