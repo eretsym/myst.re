@@ -63,17 +63,28 @@ function Entry(props: EntryProps) {
 
 export const handler: Handlers<ProjectsPageData, ProjectsPageData> = {
   async GET(_req, ctx) {
+    const leftCol: object[] = [];
+    const rightCol: object[] = [];
+
     const GITHUB_TOKEN = Deno.env.get("GITHUB_TOKEN");
-    let res = await fetch("https://api.github.com/users/eretsym/repos", {
+
+    const res1 = await fetch("https://api.github.com/users/eretsym/repos", {
       headers: {
         "Authorization": `Bearer ${GITHUB_TOKEN}`,
         "X-GitHub-Api-Version": "2022-11-28",
       },
     });
+    const p1 = await res1.json();
 
-    const projects = await res.json();
-    const leftCol: object[] = [];
-    const rightCol: object[] = [];
+    const res2 = await fetch("https://api.github.com/orgs/n1rip/repos", {
+      headers: {
+        "Authorization": `Bearer ${GITHUB_TOKEN}`,
+        "X-GitHub-Api-Version": "2022-11-28",
+      },
+    });
+    const p2 = await res2.json();
+
+    const projects = p1.concat(p2);
 
     projects.forEach((elem: object, i: number) => {
       i % 2 == 0 ? leftCol.push(elem) : rightCol.push(elem);
