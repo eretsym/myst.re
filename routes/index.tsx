@@ -14,12 +14,10 @@ export default function Home() {
           in low-level programming, hacking, retro-engineering and computer
           science as a whole since childhood, i work on multiple projects
           related to these fields in favor of a career following this
-          interesting journey. i am a day dreamer with a very analytic view on
-          life, which grants me with creativity and logic combo that i really
-          like.
+          interesting journey.
         </div>
         <div>
-          thus i started making music as a hobby in 2017 and publicly released
+          started making music as a hobby in 2017 and publicly released
           my first track Quantum Drive under the nickname Hyperwav in 2019,
           following my friends feedback. as a feeling driven kind of person i
           like to express emotion into sound. recently i started another music
