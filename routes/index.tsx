@@ -19,12 +19,11 @@ export default function Home() {
         <div>
           started making music as a hobby in 2017 and publicly released
           my first track Quantum Drive under the nickname Hyperwav in 2019,
-          following my friends feedback. as a feeling driven kind of person i
-          like to express emotion into sound. recently i started another music
-          project named cn96 fucusing on lo-fi house beats.
+          following my friends feedback. recently i started another music
+          project named cn96 fucusing on underground lo-fi house beats.
         </div>
         <div className={"overflow-hidden h-96 w-full relative"}>
-          <img className={"object-cover absolute -top-80"} src={"/guy.jpg"} alt="me" />
+          <img className={"object-cover absolute -top-64"} src={"/guy.jpg"} alt="me" />
           <div class="absolute text-green-300 bottom-3 left-3">
             <pre>
 .@@...@@..@@..@@...@@@@...@@@@@@..@@@@@@..@@@@@...@@@@@@.<br/>
