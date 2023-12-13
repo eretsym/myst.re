@@ -23,7 +23,7 @@ export default function Home() {
           project named cn96 fucusing on underground lo-fi house beats.
         </div>
         <div className={"overflow-hidden h-96 w-full relative"}>
-          <img className={"object-cover absolute -top-64"} src={"/guy.jpg"} alt="me" />
+          <img className={"object-cover absolute -top-24"} src={"/guy.png"} alt="me" />
           <div class="absolute text-green-300 bottom-3 left-3">
             <pre>
 .@@...@@..@@..@@...@@@@...@@@@@@..@@@@@@..@@@@@...@@@@@@.<br/>
